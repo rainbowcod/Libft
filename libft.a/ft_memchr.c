@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/09 12:57:30 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/09 13:13:45 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
 	size_t	i;
-	char	*a;
-	char	*b;
+	unsigned char *strr;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
+	strr = (unsigned char *)str;
+	if (!str)
+		return (NULL);
 	while (i < n)
 	{
-		a[i] = b[i];
+		if (strr[i] == (char)c)
+			return (&strr[i]);
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
-// }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)
+int	main(void)
+{
+	char str[] = "Hello arkness My Old Friend";
+	printf("%s\n", memchr(str, 'D', 7));
+	printf("%s\n", ft_memchr(str, 'D', 7));
+	return (0);
+}

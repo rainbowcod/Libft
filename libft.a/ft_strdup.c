@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/10 13:28:27 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/10 13:52:54 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s1)
 {
+	size_t	size;
 	size_t	i;
-	char	*a;
-	char	*b;
+	char	*ptr;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
-	while (i < n)
+	size = ft_strlen(s1);
+	ptr = malloc(sizeof(size + 1));
+	if (!ptr)
+		return (NULL);
+	while (ptr[i] != '\0')
 	{
-		a[i] = b[i];
+		ptr[i] = s1[i];
 		i++;
 	}
-	return (dest);
+	ptr[i] = '\0';
+	return (ptr);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
-// }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)

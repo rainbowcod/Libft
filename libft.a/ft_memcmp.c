@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/09 14:43:57 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/09 17:25:42 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
-	char	*a;
-	char	*b;
+	const char	*a;
+	const char	*b;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
+	a = (const char *)s1;
+	b = (const char *)s2;
 	while (i < n)
 	{
-		a[i] = b[i];
+		if (a[i] == '\0' || a[i] != b[i])
+			return (a[i] - b[i]);
 		i++;
 	}
-	return (dest);
+	return (0);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
-// }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)
+int	main(void)
+{
+	char	s1[20] = "HEllo";
+	char	s2[20] = "Hello";
+	printf("%d\n", memcmp(s1, s2, 5));
+	printf("%d\n", ft_memcmp(s1, s2, 5));
+	return (0);
+}

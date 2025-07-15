@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 01:15:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/10 13:53:03 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/08 21:53:29 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/08 22:00:56 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_tolower(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 65 && c <= 90)
+		return (c +32);
+	else
+		return (c);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "Hello thereeee";
-// 	printf("%d\n", ft_strlen(str));
-// 	return (0);
-// }
+int	main(void)
+{
+	printf("%c\n", tolower(100));
+	printf("%c\n", ft_tolower(100));
+	return (0);
+}
+
+// return ((c >= 65 && c <= 90) ? (c + 32) : c);

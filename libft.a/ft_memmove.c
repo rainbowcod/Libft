@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/08 16:03:04 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/08 19:30:51 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-	char	*a;
-	char	*b;
+	size_t	k;
+	char	*tmp;
+	char	*dest;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
-	while (i < n)
+	k = 0;
+	dest = (char *)dst;
+	tmp = (char *)src;
+	while (i < len)
 	{
-		a[i] = b[i];
-		i++;
+		dest[k++] = tmp[i++];
 	}
 	return (dest);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
-// }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)
+int	main(void)
+{
+	char	dst[20] = "Hello";
+	char	src[20] = "Creeper Aww Man";
+	printf("%s\n", memmove(dst, src, 20));
+	printf("%s\n", ft_memmove(dst, src, 20));
+	return (0);
+}

@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 01:15:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/10 13:53:03 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/08 21:59:28 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/09 11:55:26 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char *ft_strchr(char *str, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (!str)
+		return (NULL);
+	while (*str != c)
+	{
+		if (*str == '\0')
+			return (NULL);
+		(str)++;
+	}
+	return (str);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "Hello thereeee";
-// 	printf("%d\n", ft_strlen(str));
-// 	return (0);
-// }
+int	main(void)
+{
+	char str[] = "Creeper, Aww Man!";
+	printf("%s\n", strchr(str, 44)); // 44 is ,
+	printf("%s\n", ft_strchr(str, 44));
+	return (0);
+}

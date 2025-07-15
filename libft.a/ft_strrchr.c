@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 01:15:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/10 13:53:03 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/09 11:55:44 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/09 12:33:57 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strrchr(char *str, int c)
 {
-	size_t	i;
+	size_t	len;
+	char *strr;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	len = ft_strlen(str);
+	strr = &str[len - 1];
+	if (!str)
+		return (NULL);
+	while (len)
+	{
+		if (*strr == (char)c)
+			return (strr);
+		len--;
+		strr--;
+	}
+	return (NULL);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "Hello thereeee";
-// 	printf("%d\n", ft_strlen(str));
-// 	return (0);
-// }
+int	main(void)
+{
+	char str[5] = "FUCHK";
+	printf("%s\n", ft_strrchr(str, 67));
+	printf("%s\n", strrchr(str, 67));
+	return (0);
+}
+
+// alaways use the fucntions you already made

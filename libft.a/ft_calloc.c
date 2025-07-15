@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/10 12:59:28 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/14 17:17:28 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
-	char	*a;
-	char	*b;
+	size_t k;
+	void *ptr;
 
-	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
-	while (i < n)
-	{
-		a[i] = b[i];
-		i++;
-	}
-	return (dest);
+	k = count * size;
+	ptr = malloc(sizeof(k));
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, k);
+	return (ptr);
 }
 
-// #include <stdio.h>
 // int	main(void)
 // {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
+// 	size_t count = 3;
+// 	size_t size = 4;
 // }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)

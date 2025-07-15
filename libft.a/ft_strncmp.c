@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/09 12:36:40 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/09 12:54:16 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	char	*a;
-	char	*b;
+	size_t i;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
 	while (i < n)
 	{
-		a[i] = b[i];
+		if (s1[i] == '\0' || s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (dest);
+	return (0);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
-// }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)
+int	main(void)
+{
+	char	s1[] = "fucknugget";
+	char	s2[] = "fucknugget";
+	printf("%d\n", strncmp(s1, s2, 5));
+	printf("%d\n", ft_strncmp(s1, s2, 5));
+	return (0);
+}

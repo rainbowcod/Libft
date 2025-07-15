@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/08 16:28:13 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/08 19:46:40 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/08 20:10:08 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
 	size_t	i;
-	char	*a;
-	char	*b;
+	size_t	k;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
-	while (i < n)
-	{
-		a[i] = b[i];
-		i++;
-	}
-	return (dest);
+	k = 0;
+	while (src[k] != '\0' || i < destsize + 1)
+		dest[i++] = src[k++];
+	dest[++i] = '\0';
+	return (k);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
-// }
-
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)
+int	main(void)
+{
+	char	src[] = "Hello World";
+	char	dest[10] = "";
+	char	s[] = "Hello World";
+	char	d[10] = "";
+	printf("%zu\n", strlcpy(dest, src, 5));
+	printf("%zu\n", ft_strlcpy(d, s, 5));
+	return (0);
+}
