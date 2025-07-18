@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:28:27 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/10 13:52:54 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:54:17 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	size = ft_strlen(s1);
-	ptr = malloc(sizeof(size + 1));
+	ptr = malloc(sizeof(char) * (size + 1));
 	if (!ptr)
 		return (NULL);
-	while (ptr[i] != '\0')
+	while (s1[i] != '\0')
 	{
 		ptr[i] = s1[i];
 		i++;

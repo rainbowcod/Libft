@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 10:20:08 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/10 12:58:22 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 18:58:55 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ int	ft_atoi(const char *str)
 	return (res);
 }
 
-int	main(void)
-{
-	const char	str[] = "\n   \t-1234hjghj78978";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-	return (0);
-}
+// int	main(void)
+// {
+// 	const char	str[] = "\n   \t-1234hjghj78978";
+// 	printf("%d\n", atoi(str));
+// 	printf("%d\n", ft_atoi(str));
+// 	return (0);
+// }

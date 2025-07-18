@@ -6,13 +6,13 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 01:15:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/10 13:53:03 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:31:50 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(char const *str)
 {
 	size_t	i;
 

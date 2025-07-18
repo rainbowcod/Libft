@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 01:04:53 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/17 19:00:59 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/17 18:18:42 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/17 21:20:45 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	return (c >= 32 && c <= 126);
+	int	count;
+
+	count = ft_strlen(s1);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n", ft_isprint(2));
-// 	return(0);
-// }
-// 1 true
-// 0 false
-// 'xyz' is character itself, not in '' is ascii value
+// use strchr and strrchr!!!

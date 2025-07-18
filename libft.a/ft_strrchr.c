@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 11:55:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/09 12:33:57 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:21:20 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(char *str, int c)
 {
 	size_t	len;
-	char *strr;
+	char	*strr;
 
 	len = ft_strlen(str);
 	strr = &str[len - 1];
@@ -31,12 +31,12 @@ char	*ft_strrchr(char *str, int c)
 	return (NULL);
 }
 
-int	main(void)
-{
-	char str[5] = "FUCHK";
-	printf("%s\n", ft_strrchr(str, 67));
-	printf("%s\n", strrchr(str, 67));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char str[5] = "FUCHK";
+// 	printf("%s\n", ft_strrchr(str, 67));
+// 	printf("%s\n", strrchr(str, 67));
+// 	return (0);
+// }
 
 // alaways use the fucntions you already made

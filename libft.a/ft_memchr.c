@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 12:57:30 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/09 13:13:45 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:07:12 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	size_t	i;
-	unsigned char *strr;
+	size_t			i;
+	unsigned char	*strr;
 
 	i = 0;
 	strr = (unsigned char *)str;
@@ -30,10 +30,10 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	return (NULL);
 }
 
-int	main(void)
-{
-	char str[] = "Hello arkness My Old Friend";
-	printf("%s\n", memchr(str, 'D', 7));
-	printf("%s\n", ft_memchr(str, 'D', 7));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char str[] = "Hello arkness My Old Friend";
+// 	printf("%s\n", memchr(str, 'D', 7));
+// 	printf("%s\n", ft_memchr(str, 'D', 7));
+// 	return (0);
+// }

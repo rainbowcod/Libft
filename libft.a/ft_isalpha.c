@@ -6,16 +6,14 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:23:18 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/03 14:23:57 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:42:53 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int i)
 
 {
-	if ((i < 'a' || i > 'z') && (i < 'A' || i > 'Z'))
-		return (1);
-	return (0);
+	return ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'));
 }
 
 // #include <stdio.h>

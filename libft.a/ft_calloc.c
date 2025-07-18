@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:59:28 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/14 17:17:28 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 18:59:23 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t k;
-	void *ptr;
+	size_t	k;
+	void	*ptr;
 
 	k = count * size;
-	ptr = malloc(sizeof(k));
+	ptr = malloc(k);
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, k);

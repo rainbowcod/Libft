@@ -6,13 +6,13 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:26:02 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/06 01:03:26 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:00:50 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 
 {
 	return (c >= 0 && c <= 127);

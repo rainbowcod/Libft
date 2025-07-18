@@ -6,16 +6,16 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 15:28:00 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/14 17:21:37 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/17 19:08:10 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *b, int	c, size_t len)
+void	ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *str;
-	size_t i;
+	unsigned char	*str;
+	size_t			i;
 
 	str = b;
 	i = 0;

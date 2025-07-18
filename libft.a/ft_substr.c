@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/17 19:02:51 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/15 20:01:03 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/17 19:20:07 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*a;
-	char	*b;
+	int		i;
+	int		count;
+	char	*res;
 
 	i = 0;
-	a = (char *)dest;
-	b = (char *)src;
-	while (i < n)
-	{
-		a[i] = b[i];
-		i++;
-	}
-	return (dest);
+	if (!s)
+		return (NULL);
+	if (start >= len)
+		return (ft_strdup(""));
+	count = ft_strlen(s);
+	res = malloc(sizeof(char) * count + 1);
+	while (start <= len && s[start] != '\0')
+		res[i++] = s[start++];
+	res[i] = '\0';
+	return (res);
 }
 
-// #include <stdio.h>
 // int	main(void)
 // {
-// 	char dest[20] = "Hello there";
-// 	char src[20] = "I'm a creeper";
-// 	printf("%s\n", ft_memcpy(dest, src, 5));
-// 	return (0);
+// 	char s[] = "Hello there";
+// 	int	start = 3;
+// 	size_t	len = 5;
 // }
-
-// void does not return
-// void */ pointer function returns a pointer (to char in htis instance)
