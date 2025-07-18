@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 11:55:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/17 19:21:20 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:44:10 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,38 @@
 
 char	*ft_strrchr(char *str, int c)
 {
-	size_t	len;
-	char	*strr;
+	int	len;
 
 	len = ft_strlen(str);
-	strr = &str[len - 1];
-	if (!str)
-		return (NULL);
-	while (len)
+	while (len >= 0)
 	{
-		if (*strr == (char)c)
-			return (strr);
+		if (str[len] == (char)c)
+			return ((char *)&str[len]);
 		len--;
-		strr--;
 	}
 	return (NULL);
 }
+
+// char	*ft_strrchr(char *str, int c)
+// {
+// 	size_t	len;
+// 	char	*strr;
+
+// 	len = ft_strlen(str);
+// 	strr = &str[len - 1];
+// 	if (!str)
+// 		return (NULL);
+// 	if (c == '\0')
+// 		return (0);
+// 	while (len)
+// 	{
+// 		if (*strr == (char)c)
+// 			return (strr);
+// 		len--;
+// 		strr--;
+// 	}
+// 	return (NULL);
+// }
 
 // int	main(void)
 // {

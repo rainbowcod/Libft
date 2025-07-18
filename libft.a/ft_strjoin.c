@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 17:38:50 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/17 19:23:21 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/18 14:30:13 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!res)
 		return (NULL);
-	if (!s1)
-		res[0] = '\0';
-	else
-		res = ft_strlcpy(res, s1, len1);
-	if (!s2)
-		res[len2 + 1] = '\0';
-	else
-		res[len2 + 1] = ft_strlcpy(res, s2, len2);
+	if (s1)
+		ft_strlcpy(res, s1, len1 + 1);
+	if (s2)
+		ft_strlcpy(res + len1, s2, len2 + 1);
 	return (res);
 }
