@@ -5,32 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 16:10:07 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/17 19:28:58 by olmatske         ###   ########.fr       */
+/*   Created: 2025/07/20 14:11:30 by olmatske          #+#    #+#             */
+/*   Updated: 2025/07/20 19:48:50 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	wordcount(char const *str, char c);
-static char	**str_split(const char *str, char *res, char c);
+int		ft_wordcount(char const *str, char c);
+int		ft_tokenize(char const *str, char c, char **res);
+void	ft_free(char **res);
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		k;
-	int		count;
 	char	**res;
 
-	i = 0;
-	k = 0;
-	count = wordcount(s, c) + 1;
-	res = ft_calloc(count, sizeof(char *));
-	res = str_split(s, res, c);
+	res = ft_calloc(ft_wordcount(s, c) + 1, sizeof(char *));
+	if (!res)
+		return (NULL);
+	if (ft_tokenize(s, c, res) == -1)
+	{
+		ft_free(res);
+		return (NULL);
+	}
 	return (res);
 }
 
-static int	wordcount(char const *str, char c)
+int	ft_wordcount(char const *str, char c)
 {
 	int	i;
 	int	word;
@@ -39,43 +40,63 @@ static int	wordcount(char const *str, char c)
 	word = 0;
 	while (str[i])
 	{
-		if (str[i] != c)
+		if (str[i] == c)
 		{
-			word++;
-			while (str[i] != c && str[i])
-				i++;
+			i++;
+			continue ;
 		}
-		else
+		word++;
+		while (str[i] != c && str[i])
 			i++;
 	}
 	return (word);
 }
 
-// Count the amount of words in the
-static char	**str_split(const char *str, char *res, char c)
+int	ft_tokenize(char const *str, char c, char **res)
 {
-	int	i;
-	int	k;
+	int		i;
+	int		k;
+	int		w;
 
 	i = 0;
 	k = 0;
+	w = 0;
 	while (str[i])
 	{
 		if (str[i] == c)
-			res[k] = '\0';
-		else
-			res[k] = str[i];
-		k++;
-		i++;
+		{
+			i++;
+			k = 0;
+			continue ;
+		}
+		while (str[i] != c && str[i])
+		{
+			i++;
+			k++;
+		}
+		res[w] = ft_substr(str, i - k, k);
+		if (!res[w++])
+			return (-1);
 	}
-	return (&res);
+	return (0);
+}
+
+void	ft_free(char **res)
+{
+	int	w;
+
+	w = 0;
+	while (res[w])
+	{
+		free(res[w]);
+		w++;
+	}
+	free(res);
 }
 
 // int	main(void)
 // {
-// 	const char	str[] = "Hello!there!Bitch";
-// 	char c = '!';
-// 	printf("%s\n", *ft_split(str, c));
+// 	char	str[] = "Hello Bitch I love marshmallows";
+// 	printf("%s\n", ft_split(str, ' ')[1]);
 // 	return (0);
 // }
-// // AEAEAEAEEEEEAAAAEAEEEAEAEAEAEAENSBSKUGUfuyvffdhfgakuwegGS

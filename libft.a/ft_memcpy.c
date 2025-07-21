@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 13:26:21 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/17 19:02:51 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/18 15:44:32 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*a;
 	char	*b;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	a = (char *)dest;
 	b = (char *)src;

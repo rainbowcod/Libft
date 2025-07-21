@@ -6,7 +6,7 @@
 /*   By: olmatske <olmatske@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 11:55:44 by olmatske          #+#    #+#             */
-/*   Updated: 2025/07/18 11:44:10 by olmatske         ###   ########.fr       */
+/*   Updated: 2025/07/19 20:50:25 by olmatske         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(char *str, int c)
 	while (len >= 0)
 	{
 		if (str[len] == (char)c)
-			return ((char *)&str[len]);
+			return (&str[len]);
 		len--;
 	}
 	return (NULL);
