@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../../../piscine"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Eval"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"libft.h": "c"
+		}
+	}
+}
